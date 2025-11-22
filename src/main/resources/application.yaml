@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: ${SPRING_APPLICATION_NAME:courses-platform}
+    
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    
+  jpa:
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO}
+    properties:
+      hibernate:
+        format_sql: ${SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL}
+    show-sql: ${SPRING_JPA_SHOW_SQL}
+
+server:
+  port: ${SERVER_PORT}
