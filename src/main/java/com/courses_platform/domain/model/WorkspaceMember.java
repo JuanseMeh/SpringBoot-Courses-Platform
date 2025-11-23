@@ -28,6 +28,7 @@ public class WorkspaceMember {
         WorkspaceMember member = new WorkspaceMember();
         member.setUser(user);
         member.setWorkspace(workspace);
+        member.setId(new WorkspaceMemberId(workspace.getId(), user.getId()));
         return member;
     }
 

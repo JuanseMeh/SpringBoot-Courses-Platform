@@ -1,0 +1,260 @@
+{
+  "info": {
+    "name": "Courses Platform API Test Samples",
+    "_postman_id": "aabbccdd-1234-5678-9101-112131415161",
+    "description": "Sample JSON requests to test all API endpoints for Categories, Courses, Workspaces, Users, and Enrollments",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Create Category",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "http://localhost:8080/categories",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Programming\"}"
+            }
+          }
+        },
+        {
+          "name": "List Categories",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/categories"
+          }
+        },
+        {
+          "name": "Get Category By ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/categories/1"
+          }
+        },
+        {
+          "name": "Update Category",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "http://localhost:8080/categories/1",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Web Development\"}"
+            }
+          }
+        },
+        {
+          "name": "Delete Category",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:8080/categories/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Courses",
+      "item": [
+        {
+          "name": "Create Course",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "http://localhost:8080/courses",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"title\": \"Java Basics\",\"description\": \"Learn Java from scratch\",\"categoryId\": 1}"
+            }
+          }
+        },
+        {
+          "name": "List Courses",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/courses"
+          }
+        },
+        {
+          "name": "Get Course By ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/courses/1"
+          }
+        },
+        {
+          "name": "Update Course",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/courses/1",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"title\": \"Advanced Java\",\"description\": \"Deep dive into Java concepts\",\"categoryId\": 1}"
+            }
+          }
+        },
+        {
+          "name": "Delete Course",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:8080/courses/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "http://localhost:8080/users",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Alice\",\"email\": \"alice@example.com\"}"
+            }
+          }
+        },
+        {
+          "name": "List Users",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/users"
+          }
+        },
+        {
+          "name": "Get User By ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/users/1"
+          }
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "https://localhost:8080/users/1",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Alice B.\",\"email\": \"alice.b@example.com\"}"
+            }
+          }
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:8080/users/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Workspaces",
+      "item": [
+        {
+          "name": "Create Workspace",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "http://localhost:8080/workspaces",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Dev Team\",\"ownerId\": 1}"
+            }
+          }
+        },
+        {
+          "name": "List Workspaces",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/workspaces"
+          }
+        },
+        {
+          "name": "Get Workspace By ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/workspaces/1"
+          }
+        },
+        {
+          "name": "Add Workspace Member",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "http://localhost:8080/workspaces/1/members",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"userId\": 2}"
+            }
+          }
+        },
+        {
+          "name": "Remove Workspace Member",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:8080/workspaces/1/members/2"
+          }
+        },
+        {
+          "name": "Transfer Workspace Ownership",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "http://localhost:8080/workspaces/1/owner",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"newOwnerId\": 2}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Enrollments",
+      "item": [
+        {
+          "name": "Create Enrollment",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "http://localhost:8080/enrollments",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"userId\": 1, \"courseId\": 1}"
+            }
+          }
+        },
+        {
+          "name": "List Enrollments",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/enrollments"
+          }
+        },
+        {
+          "name": "Get Enrollment By User And Course",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/enrollments/users/1/courses/1"
+          }
+        },
+        {
+          "name": "Delete Enrollment",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:8080/enrollments/users/1/courses/1"
+          }
+        }
+      ]
+    }
+  ]
+}

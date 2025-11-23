@@ -42,6 +42,18 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webmvc</artifactId>
 		</dependency>
+		
+		<!-- Flyway core and MySQL support -->
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+			<version>11.14.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-mysql</artifactId>
+			<version>11.14.1</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -90,6 +102,26 @@
 					</annotationProcessorPaths>
 				</configuration>
 			</plugin>
+
+			<!-- Flyway Maven Plugin Configuration -->
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>11.14.1</version>
+			<configuration>
+				<url>jdbc:mysql://localhost:3306/courses_db</url>
+				<user>root</user>
+				<password>Kaito932!</password>
+				<schemas>
+					<schema>courses_db</schema>
+				</schemas>
+				<locations>
+					<location>filesystem:src/main/resources/db/migration</location>
+				</locations>
+				<baselineOnMigrate>true</baselineOnMigrate>
+			</configuration>
+			</plugin>
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

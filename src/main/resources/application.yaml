@@ -1,19 +1,19 @@
 spring:
   application:
-    name: ${SPRING_APPLICATION_NAME:courses-platform}
-    
+    name: courses-platform
+
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
-    username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD}
-    
+    url: jdbc:mysql://localhost:3306/courses_db
+    username: root
+    password: 
   jpa:
     hibernate:
-      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO}
+      ddl-auto: update
     properties:
       hibernate:
-        format_sql: ${SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL}
-    show-sql: ${SPRING_JPA_SHOW_SQL}
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
 
 server:
-  port: ${SERVER_PORT}
+  port: 8080
